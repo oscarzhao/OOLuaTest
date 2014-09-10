@@ -4,11 +4,9 @@
 #include "FruitApple.h"
 #include "FruitApple_expose.h"
 
-///*
-//Name: Proxy
-//Function: 使用 Proxy ，C++ 继承
-//Remark: OOLUA 第五个例子
-//*/
+/**
+*	boost::shared_ptr 作为 返回值
+ */
 
 namespace{
     bool get_result(OOLUA::Script* lua)
@@ -88,30 +86,34 @@ void callStaticMemFunc()
     m_lua->register_class<Apple>();
     m_lua->register_class_static<Apple>("AnyCFunc", OOLUA::Proxy_class<Apple>::anyCFunc);
 
-    // fine, works well
+    // call static member functions
     //bool result = m_lua->run_chunk("Apple.AnyCFunc(1)");
     //std::cout << "result: " << result << std::endl;
     
-    // not fine, copy fails
+    // call constructor, call member functions inherited from Fruit
     m_lua->run_chunk(
-        "function func()"
-        "a = Apple()" 
-        "w = a:getWeight()"
-        "return w"
-        "end");
+        "function func() "
+        "a = Apple.new() "
+        "w = a:getWeight() "
+        "return w "
+        "end ");
     m_lua->call("func");
-    //m_lua->call("func", &app);
+    
+    double weight;
+    OOLUA::pull(*m_lua, weight);
+    std::cout << "Weight: " << weight << std::endl;
+
 
     // 测试 加载 程序块，使用 call
     //m_lua->load_chunk("return");
     //lua_pushvalue(*m_lua, 1);
     //OOLUA::Lua_function caller(*m_lua);
     //std::cout << "return " << caller(1) << std::endl;
+
     delete(m_lua);
 }
 int main()
 {
-    //cleanAppleTest();
     callStaticMemFunc();
     system("pause");
     return 0;

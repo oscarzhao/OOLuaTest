@@ -14,13 +14,13 @@ public:
         std::cout << "Fruit constructed successfully" << std::endl;
     }
 
-    ~Fruit()
+    virtual ~Fruit()
     {
         std::cout << "Fruit destructed" << std::endl;
     }
     double getWeight()
     {
-        std::cout << "Weight: " << m_weight << std::endl;
+        std::cout << "[Fruit: " << __FUNCTION__ << "] m_weight: " << m_weight <<  " kg" << std::endl;
         return m_weight;
     }
 
@@ -47,31 +47,28 @@ private:
 class Apple: public Fruit
 {	
 public:
-    Apple(void):
-          Fruit(),
-          m_color("red"),
-          m_clean(false)	
-      {
-          std::cout << "Apple constructed successfully!" <<std::endl;
-      }
+    Apple():Fruit(), m_color("red"), m_clean(false)	
+    {
+        std::cout << "Apple constructed successfully!" <<std::endl;
+    }
 
-      ~Apple(void)
-      {
-          std::cout << "Apple destructed." <<std::endl;
-      }
+    virtual ~Apple()
+    {
+        std::cout << "Apple destructed." <<std::endl;
+    }
 
-      void cleanApple()
-      {
-          m_clean = true;
-          std::cout <<"The apple is clean now !"<<std::endl;
-      }
+    void cleanApple()
+    {
+        m_clean = true;
+        std::cout <<"The apple is clean now !"<<std::endl;
+    }
 
-      static double anyCFunc (double x)
-      {
-          x += 1;
-          std::cout << x <<	std::endl;
-          return x;
-      }
+    static double anyCFunc (double x)
+    {
+        x += 1;
+        std::cout << x <<	std::endl;
+        return x;
+    }
 
 
 private:
