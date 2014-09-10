@@ -48,11 +48,16 @@ int main()
 
     m_lua->run_chunk(
         "function func() "
-        "a=MyClass() " 
-        "return a:getRetDerived() "
-        //"w = ptr.funcVoidThreeIntParams(1,2,3)"
+        "a=MyClass.new() " 
+        "ptr=a:getRetDerived() "
+        "w=ptr:funcVoidThreeIntParams(1,2,3) "
+        "return ptr "
         "end ");
     m_lua->call("func");
+
+    boost::shared_ptr< RetDerived > ret;
+    OOLUA::pull(*m_lua, ret);
+    ret->funcVoidThreeIntParams(1, 2, 3);
 
     delete(m_lua);
 

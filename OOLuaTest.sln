@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VectorReg", "project\Vector
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassLua", "project\ClassLua\ClassLua.vcproj", "{4130890C-24A9-4387-9F11-515C4C0FB462}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Proxy_Inheritance_Abstract", "project\Proxy_Inheritance_Abstract\Proxy_Inheritance_Abstract.vcproj", "{8E4616B1-E40B-4D3F-8DF3-3C3D47581F9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -85,6 +87,10 @@ Global
 		{4130890C-24A9-4387-9F11-515C4C0FB462}.Debug|Win32.Build.0 = Debug|Win32
 		{4130890C-24A9-4387-9F11-515C4C0FB462}.Release|Win32.ActiveCfg = Release|Win32
 		{4130890C-24A9-4387-9F11-515C4C0FB462}.Release|Win32.Build.0 = Release|Win32
+		{8E4616B1-E40B-4D3F-8DF3-3C3D47581F9F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E4616B1-E40B-4D3F-8DF3-3C3D47581F9F}.Debug|Win32.Build.0 = Debug|Win32
+		{8E4616B1-E40B-4D3F-8DF3-3C3D47581F9F}.Release|Win32.ActiveCfg = Release|Win32
+		{8E4616B1-E40B-4D3F-8DF3-3C3D47581F9F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

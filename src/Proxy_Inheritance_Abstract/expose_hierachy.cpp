@@ -4,7 +4,7 @@
 OOLUA_EXPORT_FUNCTIONS(AbstractBase, doSomething)
 OOLUA_EXPORT_FUNCTIONS_CONST(AbstractBase, doSomethingConst)
 
-OOLUA_EXPORT_FUNCTIONS(RetDerived)
+OOLUA_EXPORT_FUNCTIONS(RetDerived, funcVoidNoParam, funcVoidThreeIntParams)
 OOLUA_EXPORT_FUNCTIONS_CONST(RetDerived)
 
 OOLUA_EXPORT_FUNCTIONS(Derived, funcVoidNoParam, funcVoidThreeIntParams)

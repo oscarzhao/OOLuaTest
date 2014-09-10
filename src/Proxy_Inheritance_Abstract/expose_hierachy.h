@@ -10,6 +10,8 @@ OOLUA_PROXY(AbstractBase)
 OOLUA_PROXY_END
 
 OOLUA_PROXY(RetDerived, AbstractBase)
+    OOLUA_MEM_FUNC(void, funcVoidNoParam)
+    OOLUA_MEM_FUNC(void, funcVoidThreeIntParams, int, int, int)
 OOLUA_PROXY_END
 
 OOLUA_PROXY(Derived, AbstractBase)

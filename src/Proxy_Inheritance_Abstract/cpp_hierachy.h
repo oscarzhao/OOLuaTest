@@ -17,7 +17,7 @@ typedef boost::shared_ptr< RetDerived > RetDerivedPtr;
 class AbstractBase
 {
 public:
-    virtual ~AbstractBase(){};
+    virtual ~AbstractBase(){ std::cout << "AbstractBase destructed" << std::endl; };
     virtual boost::shared_ptr< AbstractBase > copy() const = 0;
     virtual void funcVoidNoParam() = 0;
     virtual void funcVoidThreeIntParams(int, int, int) = 0;
@@ -36,7 +36,7 @@ public:
 class RetDerived: public AbstractBase
 {
 public:
-    RetDerived(){};
+    RetDerived(){ std::cout << "RetDerived constructed" << std::endl; };
     virtual AbstractBasePtr copy() const
     {
         RetDerivedPtr ret(new RetDerived(*this));
