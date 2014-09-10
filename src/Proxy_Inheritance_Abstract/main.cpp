@@ -5,9 +5,9 @@
 #include "expose_hierachy.h"
 
 ///*
-//Name: Proxy
-//Function: 使用 Proxy ，C++ 继承
-//Remark: OOLUA 第五个例子
+//Name: Proxy_Inheritance_Abstract
+//Function: use boost::shared_ptr in lua
+//Remark: use shared_ptr in the same way as normal c++ object
 //*/
 
 static void stackDump(lua_State* L)
