@@ -4,11 +4,12 @@
 #include "cpp_hierachy.h"
 #include "expose_hierachy.h"
 
-///*
-//Name: Proxy_Inheritance_Abstract
-//Function: use boost::shared_ptr in lua
-//Remark: use shared_ptr in the same way as normal c++ object
-//*/
+/**
+    Name: Proxy_Inheritance_Abstract
+    Function: use boost::shared_ptr in lua; 注册抽象类及其派生类
+    Remark: use shared_ptr in the same way as normal c++ object
+    Remark_cn: 入栈出栈 boost::shared_ptr
+*/
 
 static void stackDump(lua_State* L)
 {
@@ -56,9 +57,17 @@ int main()
     m_lua->call("func");
 
     boost::shared_ptr< RetDerived > ret;
+    std::cout << "\npull boost::shared_ptr out of the stack \n";
     OOLUA::pull(*m_lua, ret);
+    std::cout << "use the boost::shared_ptr to call functions \n";
     ret->funcVoidThreeIntParams(1, 2, 3);
-
+    std::cout << "\npush boost::shared_ptr onto the stack \n";
+    OOLUA::push(*m_lua, ret);
+    std::cout << "check the stack\n";
+    stackDump(*m_lua);
+    std::cout << "pop the shared_ptr out of stack\n";
+    lua_pop(*m_lua, 1);
+    std::cout << "delete the OOLUA::Script pointer\n";
     delete(m_lua);
 
     system("pause");

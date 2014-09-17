@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="oolua_d.lib &quot;$(SERVER5_LIBS)\trunk\lib\release\lua51.lib&quot; cppunitd.lib $(NOINHERIT)"
+				AdditionalDependencies="oolua_d.lib &quot;$(SERVER5_LIBS)\trunk\lib\release\lua51.lib&quot; $(NOINHERIT)"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="&quot;$(OOLUA_HOME)\bin\Debug&quot;;&quot;$(LUA_DEV)\lib&quot;;&quot;$(BOOST_ROOT)\stage\lib&quot;;&quot;$(CPPUNIT_ROOT)/lib&quot;"
 				GenerateDebugInformation="true"
@@ -173,6 +173,10 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath="..\..\src\Proxy_Inheritance_Abstract\cpp_hierachy.cpp"
+				>
+			</File>
 			<File
 				RelativePath="..\..\src\Proxy_Inheritance_Abstract\expose_hierachy.cpp"
 				>

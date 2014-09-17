@@ -5,8 +5,9 @@
 
 OOLUA_PROXY(AbstractBase)
     OOLUA_TAGS(Abstract)
-    OOLUA_MEM_FUNC(void, doSomething)
-    OOLUA_MEM_FUNC_CONST(void, doSomethingConst)
+    //OOLUA_MEM_FUNC(void, doSomething)
+    //OOLUA_MEM_FUNC_CONST(void, doSomethingConst)
+    OOLUA_MFUNC_CONST(getClassName)
 OOLUA_PROXY_END
 
 OOLUA_PROXY(RetDerived, AbstractBase)
